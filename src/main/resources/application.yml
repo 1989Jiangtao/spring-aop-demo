@@ -1,0 +1,21 @@
+server:
+  port: 18081
+
+## 数据库使用sqlite
+spring:
+  application:
+    name: spring-aop-demo
+  datasource:
+    driver-class-name: org.sqlite.JDBC
+    url: "jdbc:sqlite:D:\\idea_worksapce\\easy-start\\easy-start.db"
+
+### MyBatis配置
+mybatis:
+  mapper-locations: classpath:mapper/*Mapper.xml
+
+### 分页插件
+pagehelper:
+  helper-dialect: sqlite
+  reasonable: true
+  support-methods-arguments: true
+  params: count=countSql
