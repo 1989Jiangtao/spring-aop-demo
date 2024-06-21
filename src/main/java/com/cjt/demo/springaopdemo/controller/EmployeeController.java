@@ -3,9 +3,11 @@ package com.cjt.demo.springaopdemo.controller;
 import com.cjt.demo.springaopdemo.entity.Employee;
 import com.cjt.demo.springaopdemo.params.EmployeePageReq;
 import com.cjt.demo.springaopdemo.service.IEmployeeSV;
+import com.cjt.demo.springaopdemo.utils.JsonUtil;
 import com.github.pagehelper.PageInfo;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
@@ -20,6 +22,7 @@ import javax.annotation.Resource;
 @Api(value = "雇佣信息",tags = "雇员信息接口")
 @RestController
 @RequestMapping(value = "/employee")
+@Slf4j
 public class EmployeeController {
 
     @Resource
@@ -34,6 +37,7 @@ public class EmployeeController {
     @ApiOperation(value = "条件搜索分页查询雇员信息",notes ="支持条件搜索，分页返回雇员信息" )
     @PostMapping(value = "/query-by-page")
     public PageInfo<Employee> queryByPage(@RequestBody EmployeePageReq pageReq){
+        log.info("EmployeeController#queryByPage ： 请求入参 {}", JsonUtil.toJSONString(pageReq));
         return employeeSV.queryByPage(pageReq);
     }
 
