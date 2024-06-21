@@ -3,6 +3,7 @@ package com.cjt.demo.springaopdemo.params;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
+import lombok.NonNull;
 
 import java.io.Serializable;
 
@@ -16,6 +17,13 @@ import java.io.Serializable;
 @ApiModel(value = "雇员分页请求入参")
 @Data
 public class EmployeePageReq implements Serializable {
+
+    @ApiModelProperty(value = "页码",required = true,example = "1")
+    @NonNull
+    private Integer pageNum;
+    @ApiModelProperty(value = "页数",required = true,example = "10")
+    @NonNull
+    private Integer pageSize;
 
     @ApiModelProperty(value = "雇员姓名")
     private String name;

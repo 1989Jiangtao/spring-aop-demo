@@ -5,7 +5,7 @@
     <resultMap id="BaseResultMap" type="com.cjt.demo.springaopdemo.entity.Employee">
         <result column="id" jdbcType="INTEGER" property="id"/>
         <result column="name" jdbcType="VARCHAR" property="name"/>
-        <result column="gender" jdbcType="VARCHAR" property="gender"/>
+        <result column="gender" jdbcType="CHAR" property="gender"/>
         <result column="phone" jdbcType="VARCHAR" property="phone"/>
         <result column="email" jdbcType="VARCHAR" property="email"/>
         <result column="age" jdbcType="INTEGER" property="age"/>
@@ -21,6 +21,7 @@
                gender,
                phone,
                email,
+               age,
                ssn,
                salary,
                address,
@@ -37,6 +38,7 @@
                 gender,
                 phone,
                 email,
+                age,
                 ssn,
                 salary,
                 address,
@@ -45,22 +47,22 @@
         from employee
         <where>
             <if test="req.name != null and req.name != ''">
-                AND name LIKE #{req.name,jdbcType=VARCHAR}'%'
+                AND name LIKE #{req.name,jdbcType=VARCHAR}
             </if>
             <if test="req.gender != null and req.gender != ''">
                 AND gender = #{req.gender,jdbcType=VARCHAR}
             </if>
             <if test="req.phone != null and req.phone != ''">
-                AND phone LIKE #{req.phone,jdbcType=VARCHAR}'%'
+                AND phone LIKE #{req.phone,jdbcType=VARCHAR}
             </if>
             <if test="req.email != null and req.email != ''">
-                AND email LIKE #{req.email,jdbcType=VARCHAR}'%'
+                AND email LIKE #{req.email,jdbcType=VARCHAR}
             </if>
             <if test="req.age != null and req.age != ''">
                 AND age = #{req.age,jdbcType=VARCHAR}
             </if>
             <if test="req.address != null and req.address != ''">
-                AND address LIKE #{req.address,jdbcType=VARCHAR}'%'
+                AND address LIKE #{req.address,jdbcType=VARCHAR}
             </if>
         </where>
     </select>

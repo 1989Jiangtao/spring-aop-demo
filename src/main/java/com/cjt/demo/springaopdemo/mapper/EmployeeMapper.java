@@ -6,6 +6,8 @@ import com.github.pagehelper.PageInfo;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
 /*****************************************************
  * @package com.cjt.demo.springaopdemo.mapper
  * @class EmployeeMapper
@@ -30,7 +32,7 @@ public interface EmployeeMapper {
      * @param pageReq 查询入参，支持模糊查询
      * @return
      */
-    PageInfo<Employee> selectByPage(@Param("req") EmployeePageReq pageReq);
+    List<Employee> selectByPage(@Param("req") EmployeePageReq pageReq);
 
 //    /**
 //     * 插入一条雇员信息
