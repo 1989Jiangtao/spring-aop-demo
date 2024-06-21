@@ -7,7 +7,7 @@ spring:
     name: spring-aop-demo
   datasource:
     driver-class-name: org.sqlite.JDBC
-    url: "jdbc:sqlite:D:\\idea_worksapce\\easy-start\\easy-start.db"
+    url: "jdbc:sqlite:D:\\idea_worksapce\\spring-aop-demo\\spring_aop.db"
 
 ### MyBatis配置
 mybatis:

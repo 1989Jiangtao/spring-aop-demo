@@ -27,12 +27,23 @@ public class Employee implements Serializable {
     private Integer id;
     @ApiModelProperty(value = "雇员姓名")
     private String name;
-    @ApiModelProperty(value = "雇员年龄")
-    private Integer age;
-    @ApiModelProperty(value = "雇员地址")
-    private String address;
+    @ApiModelProperty(value = "性别")
+    private String gender;
+    @ApiModelProperty(value = "手机号")
+    private String phone;
+    @ApiModelProperty(value = "邮箱")
+    private String email;
+    @ApiModelProperty(value = "年龄")
+    private String age;
+    @ApiModelProperty(value = "身份证号码")
+    private String ssn;
     @ApiModelProperty(value = "雇员薪资")
     private Double salary;
-
+    @ApiModelProperty(value = "雇员地址")
+    private String address;
+    @ApiModelProperty(value = "创建时间")
+    private String createTime;
+    @ApiModelProperty(value = "更新时间")
+    private String updateTime;
 
 }
