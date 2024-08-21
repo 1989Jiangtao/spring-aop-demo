@@ -1,5 +1,6 @@
 package com.cjt.demo.springaopdemo.controller;
 
+import com.cjt.demo.springaopdemo.annotation.DesensitiseMethod;
 import com.cjt.demo.springaopdemo.entity.Employee;
 import com.cjt.demo.springaopdemo.params.EmployeePageReq;
 import com.cjt.demo.springaopdemo.service.IEmployeeSV;
@@ -28,6 +29,7 @@ public class EmployeeController {
     @Resource
     private IEmployeeSV employeeSV;
 
+    @DesensitiseMethod
     @ApiOperation(value = "通过ID查询雇员信息",notes ="查询雇员信息" )
     @GetMapping(value = "/query-by-id")
     public Employee queryById(@RequestParam(value = "id") Integer id){

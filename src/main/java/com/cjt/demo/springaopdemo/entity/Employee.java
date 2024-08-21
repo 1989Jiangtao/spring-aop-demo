@@ -1,5 +1,7 @@
 package com.cjt.demo.springaopdemo.entity;
 
+import com.cjt.demo.springaopdemo.annotation.DesensitiseField;
+import com.cjt.demo.springaopdemo.enums.FieldTypeEnums;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.AllArgsConstructor;
@@ -35,6 +37,7 @@ public class Employee implements Serializable {
     private String email;
     @ApiModelProperty(value = "年龄")
     private String age;
+    @DesensitiseField(value = FieldTypeEnums.ID_NUMBER)
     @ApiModelProperty(value = "身份证号码")
     private String ssn;
     @ApiModelProperty(value = "雇员薪资")
