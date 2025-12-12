@@ -36,6 +36,7 @@ public class EmployeeController {
         return employeeSV.queryById(id);
     }
 
+    @DesensitiseMethod
     @ApiOperation(value = "条件搜索分页查询雇员信息",notes ="支持条件搜索，分页返回雇员信息" )
     @PostMapping(value = "/query-by-page")
     public PageInfo<Employee> queryByPage(@RequestBody EmployeePageReq pageReq){

@@ -16,7 +16,7 @@ public enum FieldTypeEnums {
     /**
      * 固定电话
      */
-    FIXD_PHONE,
+    FIXED_PHONE,
     /**
      * 移动电话
      */

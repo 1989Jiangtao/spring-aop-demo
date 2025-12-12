@@ -27,6 +27,7 @@ public class Employee implements Serializable {
 
     @ApiModelProperty(value = "主键ID")
     private Integer id;
+    @DesensitiseField(value = FieldTypeEnums.ZH_NAME)
     @ApiModelProperty(value = "雇员姓名")
     private String name;
     @ApiModelProperty(value = "性别")
